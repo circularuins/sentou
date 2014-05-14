@@ -1,4 +1,10 @@
 Sentou::Application.routes.draw do
+  get "demo/show"
+  # get "sentouryoku/index"
+  # get "sentouryoku/sensi"
+  root 'sentouryoku#index'
+  match '/sensi', to: 'sentouryoku#sensi', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

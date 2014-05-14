@@ -16,6 +16,8 @@ development:
   username: root
   password:
   host: localhost
+  charset: utf8
+  collation: utf8_general_ci
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -28,6 +30,8 @@ test:
   username: root
   password:
   host: localhost
+  charset: utf8
+  collation: utf8_general_ci
 
 production:
   adapter: mysql2
@@ -37,3 +41,5 @@ production:
   username: root
   password:
   host: localhost
+  charset: utf8
+  collation: utf8_general_ci
