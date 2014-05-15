@@ -12,7 +12,16 @@ class SentouryokuController < ApplicationController
       '753' => 270,
       '756' => 380,
     }
+
+    gokuu_kai = [
+                 { age: 737, power: 2 },
+                 { age: 738, power: 3 },
+                 { age: 749, power: 12 },
+                 { age: 750, power: 150 },
+                 { age: 753, power: 270 },
+                 { age: 756, power: 380 },
+                ]
       
-    render :json => gokuu
+    render :json => gokuu_kai
   end
 end

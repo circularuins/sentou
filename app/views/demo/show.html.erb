@@ -3,6 +3,9 @@
 
 <script type="text/javascript">
  d3.json("/sensi.json", function(json) {
+   json.forEach(function(d) {
+     console.log(d.age);
+   });
    console.log(json);
  });
  d3.select("body").append("p").text("test")
