@@ -1,12 +1,95 @@
-<h1>Demo#show</h1>
-<p>Find me in app/views/demo/show.html.erb</p>
+<h1>各戦士の戦闘力</h1>
 
 <script type="text/javascript">
- d3.json("/sensi.json", function(json) {
-   json.forEach(function(d) {
-     console.log(d.age);
-   });
-   console.log(json);
- });
- d3.select("body").append("p").text("test")
+    var margin = {top: 20, right: 20, bottom: 30, left: 150},
+            width = 1500 - margin.left - margin.right,
+            height = 600 - margin.top - margin.bottom;
+ 
+    var parseDate = d3.time.format("%Y/%m/%d").parse;
+ 
+    // スケールと出力レンジの定義
+    var x = d3.time.scale()
+            .range([0, width]);
+ 
+    var y = d3.scale.linear()
+            .range([height, 0]);
+ 
+    // 軸の定義
+    var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom");
+ 
+    var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left");
+ 
+    // 線の定義
+    var line = d3.svg.line()
+            .x(function(d) { return x(d.age); })
+            .y(function(d) { return y(d.power); });
+ 
+    // svgの定義
+    var svg = d3.select("body").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
+ 
+    // データを読み込む
+    d3.json("/sensi.json", function(error, data) {
+        // データをフォーマット
+        data.gokuu.forEach(function(d) {
+            d.age = parseDate(d.age);
+            d.power = +d.power;
+        });
+        data.pikkoro.forEach(function(d) {
+            d.age = parseDate(d.age);
+            d.power = +d.power;
+        });
+        data.vegeta.forEach(function(d) {
+            d.age = parseDate(d.age);
+            d.power = +d.power;
+        });
+ 
+        // データを入力ドメインとして設定
+        // 同時にextentで目盛りの単位が適切になるようにする
+        x.domain(d3.extent(data.gokuu, function(d) { return d.age; }));
+        y.domain(d3.extent(data.gokuu, function(d) { return d.power; }));
+ 
+        // x軸をsvgに表示
+        svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis)
+                .append("text")
+                .attr("x", 1320)
+                .attr("dx", ".71em")
+                .style("text-anchor", "end")
+                .text("エイジ");
+ 
+        // y軸をsvgに表示
+        svg.append("g")
+                .attr("class", "y axis")
+                .call(yAxis)
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 6)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text("戦闘力");
+ 
+        // path要素をsvgに表示し、折れ線グラフを設定
+        svg.append("path")
+                .datum(data.gokuu)
+                .attr("class", "line-gokuu")
+                .attr("d", line);
+        svg.append("path")
+                .datum(data.pikkoro)
+                .attr("class", "line-pikkoro")
+                .attr("d", line);
+        svg.append("path")
+                .datum(data.vegeta)
+                .attr("class", "line-vegeta")
+                .attr("d", line);
+    });
 </script>
