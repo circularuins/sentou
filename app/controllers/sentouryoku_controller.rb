@@ -46,6 +46,15 @@ class SentouryokuController < ApplicationController
                ],
       vegeta: [
                { age: '762/11/3', power: 180000 },
+               { age: '762/12/18', power: 24000 },
+               { age: '762/12/20', power: 35000 },
+               { age: '762/12/24', power: 2500000 },
+               { age: '763/5/7', power: 3000000 },
+               { age: '764/8/7', power: 3200000 },
+               { age: '767/5/12', power: 800000000 },
+               { age: '767/5/16', power: 27000000000 },
+               { age: '767/5/26', power: 40000000000 },
+               { age: '774/5/8', power: 300000000000 },
                { age: '784/5/7', power: 300000000000 }
               ],
     }

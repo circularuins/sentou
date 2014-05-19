@@ -3,7 +3,7 @@
 <script type="text/javascript">
     var margin = {top: 20, right: 20, bottom: 30, left: 150},
             width = 1500 - margin.left - margin.right,
-            height = 600 - margin.top - margin.bottom;
+            height = 700 - margin.top - margin.bottom;
  
     var parseDate = d3.time.format("%Y/%m/%d").parse;
  
@@ -11,7 +11,7 @@
     var x = d3.time.scale()
             .range([0, width]);
  
-    var y = d3.scale.linear()
+    var y = d3.scale.log()
             .range([height, 0]);
  
     // 軸の定義
@@ -21,6 +21,7 @@
  
     var yAxis = d3.svg.axis()
             .scale(y)
+            .ticks(10, 0)
             .orient("left");
  
     // 線の定義
