@@ -42,6 +42,14 @@ class SentouryokuController < ApplicationController
       pikkoro: [
                 { age: '753/5/9', power: 260 },
                 { age: '756/5/7', power: 365 },
+                { age: '761/10/12', power: 1480 },
+                { age: '762/11/3', power: 2500 },
+                { age: '762/12/18', power: 3500 },
+                { age: '762/12/24', power: 1400000 },
+                { age: '764/8/7', power: 1700000 },
+                { age: '767/5/12', power: 1200000000 },
+                { age: '767/5/26', power: 25000000000 },
+                { age: '774/5/8', power: 26000000000 },
                 { age: '784/5/7', power: 27000000000 }
                ],
       vegeta: [

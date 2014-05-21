@@ -39,18 +39,13 @@
     // データを読み込む
     d3.json("/sensi.json", function(error, data) {
         // データをフォーマット
-        data.gokuu.forEach(function(d) {
-            d.age = parseDate(d.age);
-            d.power = +d.power;
-        });
-        data.pikkoro.forEach(function(d) {
-            d.age = parseDate(d.age);
-            d.power = +d.power;
-        });
-        data.vegeta.forEach(function(d) {
-            d.age = parseDate(d.age);
-            d.power = +d.power;
-        });
+        for (sensi_name in data) {
+            data[sensi_name].forEach(function(d) {
+                d.age = parseDate(d.age);
+                d.power = +d.power;
+            });
+        };
+            
  
         // データを入力ドメインとして設定
         // 同時にextentで目盛りの単位が適切になるようにする
@@ -80,17 +75,12 @@
                 .text("戦闘力");
  
         // path要素をsvgに表示し、折れ線グラフを設定
-        svg.append("path")
-                .datum(data.gokuu)
-                .attr("class", "line-gokuu")
+        for (sensi_name in data) {
+            var line_name = 'line-' + sensi_name;
+            svg.append("path")
+                .datum(data[sensi_name])
+                .attr("class", line_name)
                 .attr("d", line);
-        svg.append("path")
-                .datum(data.pikkoro)
-                .attr("class", "line-pikkoro")
-                .attr("d", line);
-        svg.append("path")
-                .datum(data.vegeta)
-                .attr("class", "line-vegeta")
-                .attr("d", line);
+        };
     });
 </script>
