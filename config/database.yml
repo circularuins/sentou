@@ -34,7 +34,7 @@ test:
   collation: utf8_general_ci
 
 production:
-  adapter: mysql2
+  adapter: pg
   encoding: utf8
   database: sentou_production
   pool: 5
