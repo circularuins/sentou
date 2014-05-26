@@ -1,4 +1,11 @@
 <h1>各戦士の戦闘力</h1>
+出典：<a href="http://dragonballbp.web.fc2.com/">ドラゴンボール戦闘力＜超公式＞決定版</a>
+<h3>
+  <br><font color="red">赤：</font>孫悟空
+  <font color="blue">青：</font>孫悟飯
+  <font color="yellow">黃：</font>ベジータ
+  <font color="green">緑：</font>ピッコロ
+</h3>
 
 <script type="text/javascript">
     var margin = {top: 20, right: 20, bottom: 30, left: 150},
@@ -49,8 +56,8 @@
  
         // データを入力ドメインとして設定
         // 同時にextentで目盛りの単位が適切になるようにする
-        x.domain(d3.extent(data.gokuu, function(d) { return d.age; }));
-        y.domain(d3.extent(data.gokuu, function(d) { return d.power; }));
+        x.domain(d3.extent(data.vegeta, function(d) { return d.age; }));
+        y.domain(d3.extent(data.gohan, function(d) { return d.power; }));
  
         // x軸をsvgに表示
         svg.append("g")

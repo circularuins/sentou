@@ -53,6 +53,9 @@ class SentouryokuController < ApplicationController
                 { age: '784/5/7', power: 27000000000 }
                ],
       vegeta: [
+               { age: '732/5/7', power: 3000 },
+               { age: '734/5/7', power: 7000 },
+               { age: '737/5/7', power: 13000 },
                { age: '762/11/3', power: 180000 },
                { age: '762/12/18', power: 24000 },
                { age: '762/12/20', power: 35000 },
@@ -65,6 +68,21 @@ class SentouryokuController < ApplicationController
                { age: '774/5/8', power: 300000000000 },
                { age: '784/5/7', power: 300000000000 }
               ],
+      gohan: [
+              { age: '757/5/7', power: 1 },
+              { age: '761/10/12', power: 13070 },
+              { age: '762/4/29', power: 20000 },
+              { age: '762/11/3', power: 15000 },
+              { age: '762/12/18', power: 3500 },
+              { age: '762/12/24', power: 1600000 },
+              { age: '764/8/7', power: 900000 },
+              { age: '767/5/12', power: 750000000 },
+              { age: '767/5/26', power: 360000000000 },
+              { age: '774/4/7', power: 135000000000 },
+              { age: '774/5/7', power: 280000000000 },
+              { age: '774/5/8', power: 60000000000000 },
+              { age: '784/5/7', power: 80000000000000 }
+             ],
     }
 
     render :json => zsensi
