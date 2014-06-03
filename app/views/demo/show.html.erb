@@ -1,19 +1,21 @@
-<h1>各戦士の戦闘力</h1>
+<h2>各戦士の戦闘力</h2>
 出典：<a href="http://dragonballbp.web.fc2.com/">ドラゴンボール戦闘力＜超公式＞決定版</a>
-<h3>
-  <br><font color="red">赤：</font>孫悟空
-  <font color="blue">青：</font>孫悟飯
-  <font color="yellow">黃：</font>ベジータ
-  <font color="green">緑：</font>ピッコロ
-</h3>
+<h4>
+  <br><font color="red">孫悟空</font>
+  <font color="blue">孫悟飯</font>
+  <font color="yellow">ベジータ</font>
+  <font color="green">ピッコロ</font>
+  <font color="orange">クリリン</font>
+  <font color="purple">フリーザ</font>
+</h4>
 
 <script type="text/javascript">
  /* var margin = {top: 20, right: 20, bottom: 30, left: 150},
  width = 1500 - margin.left - margin.right,
  height = 700 - margin.top - margin.bottom; */
-    var margin = {top: 10, right: 10, bottom: 100, left: 40},
-        margin2 = {top: 430, right: 10, bottom: 20, left: 40},
-        width = 960 - margin.left - margin.right,
+    var margin = {top: 10, right: 10, bottom: 100, left: 120},
+        margin2 = {top: 430, right: 10, bottom: 20, left: 120},
+        width = 1200 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom,
         height2 = 500 - margin2.top - margin2.bottom;
  
@@ -68,7 +70,6 @@
                 d.power = +d.power;
             });
         };
-            
  
         // データを入力ドメインとして設定
         // 同時にextentで目盛りの単位が適切になるようにする
@@ -76,29 +77,7 @@
         y.domain(d3.extent(data.gohan, function(d) { return d.power; }));
         x2.domain(x.domain());
         y2.domain(y.domain());
- 
-   /* // x軸をsvgに表示
-   svg.append("g")
-   .attr("class", "x axis")
-   .attr("transform", "translate(0," + height + ")")
-   .call(xAxis)
-   .append("text")
-   .attr("x", 1320)
-   .attr("dx", ".71em")
-   .style("text-anchor", "end")
-   .text("エイジ");
-   
-   // y軸をsvgに表示
-   svg.append("g")
-   .attr("class", "y axis")
-   .call(yAxis)
-   .append("text")
-   .attr("transform", "rotate(-90)")
-   .attr("y", 6)
-   .attr("dy", ".71em")
-   .style("text-anchor", "end")
-   .text("戦闘力"); */
- 
+
         // path要素をsvgに表示し、折れ線グラフを設定
         for (sensi_name in data) {
             var line_name = 'line-' + sensi_name;
@@ -111,11 +90,22 @@
             focus.append("g")
                 .attr("class", "x axis")
                 .attr("transform", "translate(0," + height + ")")
-                .call(xAxis);
+                .call(xAxis)
+                .append("text")
+                .attr("x", 1060)
+                .attr("dx", ".71em")
+                .style("text-anchor", "end")
+                .text("エイジ");
 
             focus.append("g")
                 .attr("class", "y axis")
-                .call(yAxis);
+                .call(yAxis)
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 6)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text("戦闘力");
 
             context.append("path")
                 .datum(data[sensi_name])

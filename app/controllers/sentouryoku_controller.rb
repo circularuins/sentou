@@ -74,6 +74,31 @@ class SentouryokuController < ApplicationController
               { age: '774/5/8', power: 60000000000000 },
               { age: '784/5/7', power: 80000000000000 }
              ],
+      kuririn: [
+                { age: '736/5/7', power: 1 },
+                { age: '740/5/7', power: 1 },
+                { age: '749/9/10', power: 5.9 },
+                { age: '750/5/7', power: 70 },
+                { age: '750/5/9', power: 72 },
+                { age: '750/5/12', power: 73 },
+                { age: '753/5/7', power: 240 },
+                { age: '756/5/7', power: 400 },
+                { age: '761/10/12', power: 412 },
+                { age: '762/5/7', power: 938 },
+                { age: '762/11/3', power: 1770 },
+                { age: '762/12/18', power: 1900 },
+                { age: '762/12/24', power: 75000 },
+                { age: '763/5/3', power: 75000 },
+                { age: '763/10/7', power: 75000 },
+                { age: '764/8/7', power: 80000 },
+                { age: '767/5/7', power: 1300000 },
+                { age: '784/5/7', power: 1300000 },
+               ],
+      freezer: [
+                { age: '737/5/7', power: 530000 },
+                { age: '762/12/24', power: 120000000 },
+                { age: '764/8/7', power: 160000000 },
+               ],
     }
 
     render :json => zsensi
