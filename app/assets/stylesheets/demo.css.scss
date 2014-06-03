@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-   body {
+   svg {
         font: 10px sans-serif;
     }
  
@@ -12,11 +12,7 @@
         stroke: #000;
         shape-rendering: crispEdges;
     }
- 
-    .x.axis path {
-        display: none;
-    }
- 
+  
     .line-gokuu {
         fill: none;
         stroke: red;
@@ -36,4 +32,10 @@
         fill: none;
         stroke: blue;
         stroke-width: 1.5px;
+    }
+
+    .brush .extent {
+        stroke: #fff;
+        fill-opacity: .125;
+        shape-rendering: crispEdges;
     }
