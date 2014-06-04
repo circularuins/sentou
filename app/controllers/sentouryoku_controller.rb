@@ -95,10 +95,25 @@ class SentouryokuController < ApplicationController
                 { age: '784/5/7', power: 1300000 },
                ],
       freezer: [
+                { age: '732/5/7', power: 530000 },
                 { age: '737/5/7', power: 530000 },
                 { age: '762/12/24', power: 120000000 },
                 { age: '764/8/7', power: 160000000 },
                ],
+      cell: [
+             { age: '763/5/7', power: 1 },
+             { age: '764/5/7', power: 5200000 },
+             { age: '767/5/12', power: 400000000 },
+             { age: '767/5/16', power: 45000000000 },
+             { age: '767/5/26', power: 180000000000 },
+            ],
+      buu: [
+            { age: '732/5/7', power: 1000000000000 },
+            { age: '774/5/7', power: 1000000000000 },
+            { age: '774/5/8', power: 36000000000000 },
+            { age: '774/5/9', power: 400000000000 },
+            { age: '784/5/7', power: 400000000000 },
+           ],
     }
 
     render :json => zsensi
